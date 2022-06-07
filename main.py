@@ -1,54 +1,6 @@
 def on_button_pressed_a():
     global roll
     roll = randint(0, 5)
-    if roll == 0:
-        basic.show_leds("""
-            . . . . .
-                        . . . . .
-                        . . # . .
-                        . . . . .
-                        . . . . .
-        """)
-    elif roll == 1:
-        basic.show_leds("""
-            . . . . .
-                        . . . . .
-                        . # . # .
-                        . . . . .
-                        . . . . .
-        """)
-    elif roll == 2:
-        basic.show_leds("""
-            # . . . .
-                        . . . . .
-                        . . # . .
-                        . . . . .
-                        . . . . #
-        """)
-    elif roll == 3:
-        basic.show_leds("""
-            # . . . #
-                        . . . . .
-                        . . . . .
-                        . . . . .
-                        # . . . #
-        """)
-    elif roll == 4:
-        basic.show_leds("""
-            # . . . #
-                        . . . . .
-                        . . # . .
-                        . . . . .
-                        # . . . #
-        """)
-    elif roll == 5:
-        basic.show_leds("""
-            # . . . #
-                        . . . . .
-                        # . . . #
-                        . . . . .
-                        # . . . #
-        """)
     counts[roll] = counts[roll] + 1
 input.on_button_pressed(Button.A, on_button_pressed_a)
 
@@ -67,10 +19,10 @@ counts: List[number] = []
 counts = [0, 0, 0, 0, 0, 0]
 
 def on_forever():
-    led.plot(0, counts[0])
-    led.plot(1, counts[1])
-    led.plot(2, counts[2])
-    led.plot(3, counts[3])
-    led.plot(4, counts[4])
-    led.plot(5, counts[5])
+    led.plot(0, counts[0]-1)
+    led.plot(1, counts[1]-1)
+    led.plot(2, counts[2]-1)
+    led.plot(3, counts[3]-1)
+    led.plot(4, counts[4]-1)
+    led.plot(5, counts[5]-1)
 basic.forever(on_forever)

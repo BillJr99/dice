@@ -22,10 +22,10 @@ counts = [
 0
 ]
 basic.forever(function () {
-    led.plot(0, counts[0])
-    led.plot(1, counts[1])
-    led.plot(2, counts[2])
-    led.plot(3, counts[3])
-    led.plot(4, counts[4])
-    led.plot(5, counts[5])
+    led.plot(0, counts[0] - 1)
+    led.plot(1, counts[1] - 1)
+    led.plot(2, counts[2] - 1)
+    led.plot(3, counts[3] - 1)
+    led.plot(4, counts[4] - 1)
+    led.plot(5, counts[5] - 1)
 })
